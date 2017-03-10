@@ -1,0 +1,54 @@
+﻿<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+        <title>Template</title>
+        <link rel="shortcut icon" href="assets/favicon.ico">
+        <link rel="stylesheet" href="assets/css/common.css">
+    </head>
+    <body>
+    <div class="full-height">
+        <div class="full-height-top">
+            <header class="full-width">
+                <div class="inner">
+                    Some header
+                </div>
+            </header>
+
+            <div class="full-width block-content">
+                <div class="inner">
+                    <h1>Some content</h1>
+                    <button class="btn" data-popup="popup1">popup</button>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="full-height-bottom">
+            <footer class="full-width">
+                <div class="inner">
+                    Some footer
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- popups -->
+    <div class="popup-wr" id="popup1">
+        <div class="popup-overlay"></div>
+        <div class="popup">
+            <div class="close"><img class="inject-me" src="assets/img/icon-close.svg"></div>
+            <div class="popup-inner">
+                <div class="title">Title</div>
+                <div class="btn" data-close>Close</div>
+            </div>
+        </div>
+    </div>
+    <!-- popups end -->
+
+    <script src="assets/js/libs/jquery.js"></script>
+    <script src="node_modules/svg-injector/svg-injector.js"></script>
+    <script src="assets/js/common.js"></script>
+    </body>
+</html>

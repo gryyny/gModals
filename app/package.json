@@ -1,0 +1,27 @@
+{
+  "name": "gulp-start",
+  "version": "1.0.0",
+  "description": "A starter project for Gulp.js from Brights",
+  "main": " ",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "",
+    "url": ""
+  },
+  "author": "gryyny",
+  "license": "",
+  "bugs": {
+    "url": ""
+  },
+  "devDependencies": {
+    "browser-sync": "^2.10.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-sass": "^2.2.0",
+    "gulp-util": "^3.0.7",
+    "node-sass": "^3.4.2",
+    "svg-injector": "^1.1.3"
+  }
+}

@@ -1,0 +1,23 @@
+.btn {
+	display: inline-block;
+	vertical-align: middle;
+	padding: 10px 20px;
+	color: $extra-color;
+	cursor: pointer;
+	font-size: inherit;
+	line-height: inherit;
+	font-weight: inherit;
+	background-color: $base-color;
+	text-decoration: none;
+	margin: 10px;
+	border: 1px solid $base-color;
+	box-sizing: border-box;
+	box-shadow: none;
+	outline: none;
+	transition: background .3s, color .3s;
+
+	&:hover {
+		background-color: $extra-color;
+		color: $base-color;
+	}
+}

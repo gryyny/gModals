@@ -1,0 +1,49 @@
+$base-font: 'Arial', sans-serif;
+$extra-font: 'Tahoma', sans-serif;
+$base-color: rgba(51, 51, 51, 1);
+$extra-color: rgba(255, 255, 255, 1);
+$animation-time: 900ms;
+$animation-easing: cubic-bezier(0.25,0.1,0.25,1);
+
+@mixin placeholder {
+	::-webkit-input-placeholder {@content}
+	:-moz-placeholder           {@content}
+	::-moz-placeholder          {@content}
+	:-ms-input-placeholder      {@content}
+}
+
+html, a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background-color: #fff;
+    font-family: $base-font;
+    font-size: 14px;
+	font-weight: 400;
+    line-height: 1;
+    color: $base-color;
+    -webkit-font-smoothing: antialiased;
+}
+
+.full-height {
+	min-height: 100vh;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: stretch;
+	overflow: hidden;
+}
+
+.full-width {
+
+	.inner {
+		margin: 0 auto;
+		max-width: 980px;
+		padding-left: 20px;
+		padding-right: 20px;
+		width: 100%;
+		box-sizing: border-box;
+	}
+}
