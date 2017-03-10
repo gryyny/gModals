@@ -16,6 +16,17 @@ html, a {
     -webkit-tap-highlight-color: transparent;
 }
 
+html,
+body {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	height: 100%;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
 body {
     background-color: #fff;
     font-family: $base-font;
@@ -26,14 +37,23 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+@media screen and (max-width: 600px) {
+	body.scroll-off {
+
+		.full-height {
+			overflow: hidden;
+		}
+	}
+}
+
 .full-height {
-	min-height: 100vh;
-	box-sizing: border-box;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	align-items: stretch;
-	overflow: hidden;
+	position: absolute;
+	width: 100%;
+	top: 0;
+	left: 0;
+	height: 100%;
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
 }
 
 .full-width {
@@ -46,4 +66,10 @@ body {
 		width: 100%;
 		box-sizing: border-box;
 	}
+}
+
+.btn-wr {
+	position: fixed;
+	left: 0;
+	bottom: 20%;
 }

@@ -142,27 +142,37 @@ template { display: none; }
 
 html, a { -webkit-tap-highlight-color: transparent; }
 
+html, body { position: fixed; width: 100%; top: 0; left: 0; height: 100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; overflow: hidden; }
+
 body { background-color: #fff; font-family: "Arial", sans-serif; font-size: 14px; font-weight: 400; line-height: 1; color: #333333; -webkit-font-smoothing: antialiased; }
 
-.full-height { min-height: 100vh; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; display: -webkit-box; display: -webkit-flex; display: -moz-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -moz-box-orient: vertical; -moz-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-pack: justify; -webkit-justify-content: space-between; -moz-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; -webkit-box-align: stretch; -webkit-align-items: stretch; -moz-box-align: stretch; -ms-flex-align: stretch; align-items: stretch; overflow: hidden; }
+@media screen and (max-width: 600px) { body.scroll-off .full-height { overflow: hidden; } }
+
+.full-height { position: absolute; width: 100%; top: 0; left: 0; height: 100%; overflow-y: auto; -webkit-overflow-scrolling: touch; }
 
 .full-width .inner { margin: 0 auto; max-width: 980px; padding-left: 20px; padding-right: 20px; width: 100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 
-.btn { display: inline-block; vertical-align: middle; padding: 10px 20px; color: white; cursor: pointer; font-size: inherit; line-height: inherit; font-weight: inherit; background-color: #333333; text-decoration: none; margin: 10px; border: 1px solid #333333; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; outline: none; -webkit-transition: background .3s, color .3s; -o-transition: background .3s, color .3s; -moz-transition: background .3s, color .3s; transition: background .3s, color .3s; }
+.btn-wr { position: fixed; left: 0; bottom: 20%; }
+
+.btn { display: inline-block; vertical-align: middle; padding: 10px 20px; color: white; cursor: pointer; font-size: inherit; line-height: inherit; font-weight: inherit; background-color: #333333; text-decoration: none; margin: 10px; border: 1px solid #333333; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; outline: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; -webkit-transition: background .3s, color .3s; -o-transition: background .3s, color .3s; -moz-transition: background .3s, color .3s; transition: background .3s, color .3s; }
 
 .btn:hover { background-color: white; color: #333333; }
 
 .popup-wr.show { z-index: 110; visibility: visible; }
 
-.popup-wr.effect .popup-overlay { background-color: rgba(0, 0, 0, 0.8); -webkit-transition: background-color .2s 0s; -o-transition: background-color .2s 0s; -moz-transition: background-color .2s 0s; transition: background-color .2s 0s; }
+.popup-wr.effect:before { background-color: rgba(0, 0, 0, 0.8); -webkit-transition: background .2s 0s; -o-transition: background .2s 0s; -moz-transition: background .2s 0s; transition: background .2s 0s; }
 
-.popup-wr.effect .popup { -webkit-transform: translate(0, 0vh); -moz-transform: translate(0, 0vh); -ms-transform: translate(0, 0vh); -o-transform: translate(0, 0vh); transform: translate(0, 0vh); opacity: 1; -webkit-transition: opacity .3s 0s, -webkit-transform .5s; transition: opacity .3s 0s, -webkit-transform .5s; -o-transition: opacity .3s 0s, -o-transform .5s; -moz-transition: transform .5s, opacity .3s 0s, -moz-transform .5s; transition: transform .5s, opacity .3s 0s; transition: transform .5s, opacity .3s 0s, -webkit-transform .5s, -moz-transform .5s, -o-transform .5s; }
+.popup-wr.effect .popup { opacity: 1; -webkit-transition: opacity .3s 0s; -o-transition: opacity .3s 0s; -moz-transition: opacity .3s 0s; transition: opacity .3s 0s; }
 
-.popup-wr { position: fixed; display: -webkit-box; display: -webkit-flex; display: -moz-box; display: -ms-flexbox; display: flex; width: 100%; height: 100%; top: 0; left: 0; z-index: -1; visibility: hidden; }
+.popup-wr { position: absolute; width: 100%; height: 100%; overflow: hidden; top: 0; left: 0; z-index: -1; visibility: hidden; text-align: center; line-height: 100vh; }
 
-.popup-wr .popup-overlay { position: fixed; width: 200%; height: 200%; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); -moz-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); -o-transform: translate(-50%, -50%); transform: translate(-50%, -50%); background-color: transparent; z-index: 0; -webkit-transition: background-color .2s .3s; -o-transition: background-color .2s .3s; -moz-transition: background-color .2s .3s; transition: background-color .2s .3s; }
+.popup-wr:before { content: ''; position: fixed; width: 1000%; height: 1000%; top: 50%; right: 50%; -webkit-transform: translate(50%, -50%); -moz-transform: translate(50%, -50%); -ms-transform: translate(50%, -50%); -o-transform: translate(50%, -50%); transform: translate(50%, -50%); background-color: transparent; z-index: -1; -webkit-transition: background-color .2s .3s; -o-transition: background-color .2s .3s; -moz-transition: background-color .2s .3s; transition: background-color .2s .3s; }
 
-.popup-wr .popup { position: relative; z-index: 10; margin: auto; width: 100%; max-width: 670px; -webkit-transform: translate(0, 5vh); -moz-transform: translate(0, 5vh); -ms-transform: translate(0, 5vh); -o-transform: translate(0, 5vh); transform: translate(0, 5vh); opacity: 0; -webkit-transition: opacity .3s .1s, -webkit-transform .5s; transition: opacity .3s .1s, -webkit-transform .5s; -o-transition: opacity .3s .1s, -o-transform .5s; -moz-transition: transform .5s, opacity .3s .1s, -moz-transform .5s; transition: transform .5s, opacity .3s .1s; transition: transform .5s, opacity .3s .1s, -webkit-transform .5s, -moz-transform .5s, -o-transform .5s; }
+.popup-wr .popup-scroll { position: absolute; width: 100%; height: 100%; overflow-y: auto; -webkit-overflow-scrolling: touch; top: 0; left: 0; }
+
+.popup-wr .popup-overlay { position: absolute; width: 100%; height: 100%; top: 0; left: 0; }
+
+.popup-wr .popup { position: relative; display: inline-block; vertical-align: middle; margin: 0 auto; z-index: 10; width: 100%; max-width: 670px; opacity: 0; line-height: 1em; -webkit-transition: opacity .4s .1s; -o-transition: opacity .4s .1s; -moz-transition: opacity .4s .1s; transition: opacity .4s .1s; }
 
 .popup-wr .popup .close { position: absolute; right: 15px; top: 15px; width: 35px; height: 35px; cursor: pointer; }
 
