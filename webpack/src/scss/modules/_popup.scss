@@ -1,0 +1,114 @@
+.popup-wr.show {
+	z-index: 110;
+	visibility: visible;
+}
+
+.popup-wr.effect {
+
+	&:before {
+		background-color: rgba(0,0,0,0.8);
+		transition: background .2s 0s;
+	}
+
+	.popup {
+		//transform: translate(0, 0vh);
+		opacity: 1;
+		transition: opacity .3s 0s;
+	}
+}
+
+.popup-wr {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	visibility: hidden;
+	text-align: center;
+	line-height: 100vh;
+
+	&:before {
+		content: '';
+		position: fixed;
+		width: 1000%;
+		height: 1000%;
+		top: 50%;
+		right: 50%;
+		transform: translate(50%,-50%);
+		background-color: rgba(0,0,0,0);
+		z-index: -1;
+		transition: background-color .2s .3s;
+	}
+
+	.popup-scroll {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		overflow-y: auto;
+		-webkit-overflow-scrolling: touch;
+		top: 0;
+		left: 0;
+	}
+
+	.popup-overlay {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+	}
+
+	.popup {
+		position: relative;
+		display: inline-block;
+		vertical-align: middle;
+		margin: 0 auto;
+		z-index: 10;
+		width: 100%;
+		max-width: 670px;
+		opacity: 0;
+		line-height: 1em;
+		transition: opacity .4s .1s;
+
+		.close {
+			position: absolute;
+			right: 15px;
+			top: 15px;
+			width: 35px;
+			height: 35px;
+			cursor: pointer;
+
+			svg {
+				position: absolute;
+				width: 50%;
+				height: 50%;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%,-50%);
+				fill: rgba($base-color,0.5);
+				transition: fill .3s;
+			}
+
+			&:hover {
+
+				svg {
+					fill: rgba($base-color,1);
+				}
+			}
+		}
+	}
+
+	.popup-inner {
+		background-color: #ffffff;
+		padding: 35px 45px;
+		text-align: center;
+
+	}
+
+	.title {
+
+	}
+
+}

@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+  <title>Vostok</title>
+</head>
+<body>
+<div class="full-height">
+  <div class="full-height-top">
+    <%= require('html-loader!./partials/header.html') %>
+
+    <% if (htmlWebpackPlugin.options.content) { %>
+      <%= require('html-loader!./' + htmlWebpackPlugin.options.content + '.html') %>
+    <% } %>
+
+  </div>
+  <div class="full-height-bottom">
+    <%= require('html-loader!./partials/footer.html') %>
+  </div>
+</div>
+
+<%= require('html-loader!./partials/popups.html') %>
+
+</body>
+</html>
